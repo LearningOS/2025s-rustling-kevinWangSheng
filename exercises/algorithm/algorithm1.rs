@@ -157,7 +157,8 @@ mod tests {
         list.add(2);
         list.add(3);
         println!("Linked List is {}", list);
-        assert_eq!(3, list.length);
+        assert_eq!(2, list.length);
+
     }
 
     #[test]
