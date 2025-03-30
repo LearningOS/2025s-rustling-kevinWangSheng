@@ -101,8 +101,30 @@ impl<'a, T> Iterator for IterMut<'a, T> {
 
 fn bracket_match(bracket: &str) -> bool
 {
-	//TODO
-	true
+	// simple caculate the character , not character the expression
+	let mut stack = Vec::new();
+	for item in bracket.chars(){
+		if item == '[' {
+			stack.push(item);
+		}else if item == ']' {
+			if stack.is_empty() || stack.pop().unwrap() != '['{
+				return false;
+			}
+		}else if item == '{'{
+			stack.push(item);
+		}else if item == '}'{
+			if stack.is_empty() || stack.pop().unwrap() != '{'{
+				return false;
+			}
+		}else if item == '('{
+			stack.push(item);
+		}else if item == ')' {
+			if stack.is_empty() || stack.pop().unwrap() != '('{
+				return false;
+			}
+		}
+	}
+	stack.is_empty()
 }
 
 #[cfg(test)]

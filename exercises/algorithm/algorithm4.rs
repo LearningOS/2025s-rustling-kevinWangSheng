@@ -37,6 +37,34 @@ where
             right: None,
         }
     }
+
+    fn insert_value(&mut self,value:T){
+        match value.cmp(&self.value) {
+            Ordering::Less => {
+                match &mut self.left {
+                    None => {
+                        self.left = Some(Box::new(TreeNode::new(value)));
+                    }
+                    Some(left) => {
+                        left.insert_value(value);
+                    }
+                }
+            }
+            Ordering::Equal => {
+                // do nothing
+            }
+            Ordering::Greater => {
+                match &mut self.right {
+                    None => {
+                        self.right = Some(Box::new(TreeNode::new(value)));
+                    }
+                    Some(right) => {
+                        right.insert_value(value);
+                    }
+                }
+            }
+        }
+    }
 }
 
 impl<T> BinarySearchTree<T>
@@ -50,13 +78,34 @@ where
 
     // Insert a value into the BST
     fn insert(&mut self, value: T) {
-        //TODO
+        // the less value is on the left  and the big vlaue is on the right
+        match &mut self.root {
+            None => {
+                self.root = Some(Box::new(TreeNode::new(value)));
+            }
+            Some(root) => {
+                root.insert_value(value);
+            }
+        }
     }
 
     // Search for a value in the BST
     fn search(&self, value: T) -> bool {
-        //TODO
-        true
+        let mut current = &self.root;
+        while let Some(node) = current{
+            match value.cmp(&node.value) {
+                Ordering::Less => {
+                    current = &node.left;
+                }
+                Ordering::Equal => {
+                    return true;
+                }
+                Ordering::Greater => {
+                    current = &node.right;
+                }
+            }
+        }
+        false
     }
 }
 

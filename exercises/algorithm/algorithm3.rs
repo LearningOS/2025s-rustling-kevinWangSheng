@@ -5,8 +5,9 @@
 */
 // I AM NOT DONE
 
-fn sort<T>(array: &mut [T]){
-	//TODO
+fn sort<T:Ord>(array: &mut [T]){
+    // just use the api to sort
+    array.sort();
 }
 #[cfg(test)]
 mod tests {
