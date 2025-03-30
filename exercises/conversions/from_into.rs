@@ -44,6 +44,14 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        let splits:Vec<&str> = s.split(',').collect();
+        if splits.len() != 2 || splits[0].is_empty() || splits[1].parse::<u32>().is_err(){
+            return Self::default();
+        }
+        Self{
+            name: splits[0].to_string(),
+            age: splits[1].parse::<usize>().unwrap(),
+        }
     }
 }
 

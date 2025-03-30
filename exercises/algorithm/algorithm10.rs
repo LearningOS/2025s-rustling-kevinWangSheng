@@ -93,7 +93,6 @@ pub trait Graph {
         true
     }
     fn add_edge(&mut self, edge: (&str, &str, i32)) {
-        
     }
     fn contains(&self, node: &str) -> bool {
         self.adjacency_table().get(node).is_some()
