@@ -18,7 +18,8 @@ use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
 use std::time::{UNIX_EPOCH, SystemTime};
-
+#[path = "../exercises/mod.rs"]
+pub mod exercises_ext;
 #[macro_use]
 mod ui;
 
