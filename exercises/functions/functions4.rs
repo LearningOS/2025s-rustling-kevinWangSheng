@@ -6,7 +6,6 @@
 // for now. If anything, this is a good way to peek ahead to future exercises!)
 //
 // Execute `rustlings hint functions4` or use the `hint` watch subcommand for a
-// hint.
 
 
 fn main() {

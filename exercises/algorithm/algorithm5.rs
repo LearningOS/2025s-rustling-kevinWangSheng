@@ -3,7 +3,6 @@
     This problem requires you to implement a basic BFS algorithm
 */
 
-//I AM NOT DONE
 use std::collections::{HashSet, VecDeque};
 
 // Define a graph

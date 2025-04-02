@@ -7,7 +7,7 @@
 // https://doc.rust-lang.org/std/convert/trait.TryFrom.html
 //
 // Execute `rustlings hint try_from_into` or use the `hint` watch subcommand for
-// a hint.
+
 
 use std::convert::{TryFrom, TryInto};
 
@@ -27,7 +27,7 @@ enum IntoColorError {
     IntConversion,
 }
 
-// I AM NOT DONE
+
 
 // Your task is to complete this implementation and return an Ok result of inner
 // type Color. You need to create an implementation for a tuple of three

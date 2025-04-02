@@ -7,7 +7,6 @@
 // https://doc.rust-lang.org/std/str/trait.FromStr.html
 //
 // Execute `rustlings hint from_str` or use the `hint` watch subcommand for a
-// hint.
 
 use std::num::ParseIntError;
 use std::str::FromStr;
@@ -31,7 +30,7 @@ enum ParsePersonError {
     ParseInt(ParseIntError),
 }
 
-// I AM NOT DONE
+
 
 // Steps:
 // 1. If the length of the provided string is 0, an error should be returned
