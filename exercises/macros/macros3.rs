@@ -13,7 +13,7 @@ mod macros {
         };
     }
 }
-
+// use crate::my_macro;
 fn main() {
-    my_macro!();
+    crate::my_macro!();
 }
